@@ -2,7 +2,7 @@
 pragma solidity ^0.8.2;
 
 /// @title An electricity subscription dApp that accepts payments in Ether and stablecoin USDC
-/// @author Okoli Evans, Faith Roberts, Olorunfemi Babalola Samuel
+/// @author Okoli Evans
 
 import "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
 import "./pricefeed.sol";
@@ -26,8 +26,8 @@ contract Metro {
     string _name;
     address _factory;
     address _admin;
-    address USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
-    address METR = 0xF2761f79E26BEC23906A59aD10e777e3b1b2dEF3; //deployed on Sepolia
+    address USDC = 0x2C9678042D52B97D27f2bD2947F7111d93F3dD0D;
+    address GRID = 0xF79326F5b24F0dd4A9256C1991A1560A8737d648; //deployed on Sepolia
     uint256 _unitPrice;
     uint256 public totalSubs;
 

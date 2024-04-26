@@ -5,7 +5,7 @@ import "openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 // import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/IERC20.sol';
 contract MetroToken is ERC20 {
-constructor() ERC20("Metro", "METR") {
+constructor() ERC20("Blockgrid", "GRID") {
 // Mint 100 tokens to msg.sender
 // Similar to how
 // 1 dollar = 100 cents

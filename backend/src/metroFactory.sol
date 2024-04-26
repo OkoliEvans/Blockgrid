@@ -22,7 +22,7 @@ contract MetroFactory {
     mapping(address account => Disco) refDisco;
     Disco[] public discos;
     address controller;
-    address METR = 0xF2761f79E26BEC23906A59aD10e777e3b1b2dEF3;
+    address GRID = 0xF79326F5b24F0dd4A9256C1991A1560A8737d648;
 
     constructor() {
         controller = msg.sender;
@@ -90,7 +90,7 @@ contract MetroFactory {
         address caller = msg.sender;
         if(_freebieRecd[_user]) revert("clppr: already received free token");
         if(caller.isContract()) {
-            IERC20(METR).transfer(_user, 10);
+            // IERC20(GRID).transfer(_user, 10);
             _freebieRecd[_user] = true;
         }
     }
