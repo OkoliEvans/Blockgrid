@@ -49,32 +49,29 @@ contract Metro {
         _;
     }
 
-    function setPricePerUnit(
-        uint256 amount
-    ) external onlyAdmin() {
+    function setPricePerUnit(uint256 amount) external onlyAdmin {
         if (amount == 0 || amount == _unitPrice)
             revert("setPricePerUnit: Invalid uint price");
         _unitPrice = amount;
     }
 
-    function buyUnitsWithUSDC(
-        uint256 unitAmount,
-        uint256 meterNo
-    ) external {
+    function buyUnitsWithUSDC(uint256 unitAmount, uint256 meterNo) external {
         if (unitAmount < _unitPrice)
             revert("buyUnitsWithUSDC: Invalid unit price");
 
         IERC20(USDC).transferFrom(msg.sender, address(this), unitAmount);
 
-        user.newSub = unitAmount;
+        uint256 USDCPrice = uint(priceConsumerV3.LatestUSDCprice());
+        uint256 units = (USDCPrice * unitAmount);
+
+        user.newSub = units;
         user.meterNo = meterNo;
         user.wallet = msg.sender;
-        user.totalSubs += unitAmount;
+        user.totalSubs += units;
         IMetro(_factory).clppr(msg.sender);
-        totalSubs += unitAmount;
-        emit Subscription(unitAmount, msg.sender, meterNo);
+        totalSubs += units;
+        emit Subscription(units, msg.sender, meterNo);
     }
-
 
     function buyUnitsWithEther(
         uint256 unitAmount,
@@ -130,4 +127,3 @@ contract Metro {
 
     receive() external payable {}
 }
-
