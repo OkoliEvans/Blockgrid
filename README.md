@@ -1,6 +1,6 @@
-## Metro eletrik
+## Block Grid
 
-**Metro eletrik is an on-chain electricitiy subscription system where energy users can buy uints using cryptocurrencies.**
+**Block grid is an on-chain electricitiy subscription system where energy users can buy uints using cryptocurrencies.** First time users on the platform get free **GRID** token airdropped to their wallet.
 
 How to:
 
@@ -17,7 +17,7 @@ How to:
 
 ### Start
 ```shell
-$ git clone https://github.com/OkoliEvans/metro-electrik
+$ git clone https://github.com/OkoliEvans/Blockgrid
 ```
 
 ### Installation
@@ -66,3 +66,9 @@ $ npm run dev
 ```
 
 - Go to **http://localhost:3000**
+
+Block grid Factory contract deployment address on Scroll Sepolia: **0x75B26665502D10016c2F037c60E7E6950f679b4a**
+
+GRID token deployment address on Scroll Sepolia: **0xF79326F5b24F0dd4A9256C1991A1560A8737d648**
+
+Pricefeed deployment address: **0xa88B8eA2a9D1A143d7cB9b04fA05741EdD53eb41**
